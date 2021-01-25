@@ -12,6 +12,7 @@ namespace SlideGenerator
     public partial class CreateSlideForm : Form
     {
         private readonly List<string> selectedWords = new List<string>();
+        private string[] pptImages = { "", "", "", "", "" };
         public CreateSlideForm()
         {
             InitializeComponent();
@@ -19,6 +20,27 @@ namespace SlideGenerator
 
         private void CreateSlideButton_Click(object sender, System.EventArgs e)
         {
+            foreach (Control c in this.Controls)
+            {
+                if (c is CheckBox box)
+                {
+                    int curr = int.Parse(c.Name[8].ToString());
+                    if (box.Checked)
+                    {
+                        
+
+                        string key = $"pictureBox{curr}";
+                        dynamic selectedPictureBox = this.Controls.Find(key, true);
+                        dynamic selectedImage = selectedPictureBox[0].ImageLocation;
+                        pptImages[curr - 1] = selectedImage;
+                    }
+                    else
+                    {
+                        pptImages[curr - 1] = "";
+                    }
+                }
+            }
+
             Application pptApplication = new Application();
             Presentation pptPresentation = pptApplication.Presentations.Add(MsoTriState.msoTrue);
 
@@ -39,6 +61,35 @@ namespace SlideGenerator
             slideText.Font.Size = 16;
             slide.Shapes[2].Width = 310;
             slide.Shapes[2].Top = 115;
+
+            //Add images
+            int height = 200;
+            int width = 155;
+            int verticalPosition = 115;
+            int horizontalPosition = 370;
+            int position = 1;
+
+            for (int i = 0; i < pptImages.Length; i++)
+            {
+                if (pptImages[i] == "")
+                    continue;
+
+                verticalPosition = (position == 1 || position == 2 || position == 5) ? 115 : 315;
+                horizontalPosition = (position == 1 || position == 3) ? 370 : ((position == 5) ? 680 : 525);
+
+
+                slide.Shapes.AddPicture(
+                    pptImages[i],
+                    MsoTriState.msoTrue,
+                    MsoTriState.msoFalse,
+                    horizontalPosition,
+                    verticalPosition,
+                    width,
+                    height);
+
+                verticalPosition += height + 5;
+                position++;
+            }
         }
 
         private void BoldTextButton_Click(object sender, System.EventArgs e)
