@@ -78,6 +78,7 @@ namespace SlideGenerator
             this.getImagesButton.TabIndex = 5;
             this.getImagesButton.Text = "Get Images";
             this.getImagesButton.UseVisualStyleBackColor = true;
+            this.getImagesButton.Click += new System.EventHandler(this.GetImagesButton_ClickAsync);
             // 
             // boldTextButton
             // 
@@ -138,6 +139,7 @@ namespace SlideGenerator
             this.pictureBox1.Location = new System.Drawing.Point(13, 169);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -146,6 +148,7 @@ namespace SlideGenerator
             this.pictureBox2.Location = new System.Drawing.Point(133, 169);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -154,6 +157,7 @@ namespace SlideGenerator
             this.pictureBox3.Location = new System.Drawing.Point(253, 169);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
@@ -162,6 +166,7 @@ namespace SlideGenerator
             this.pictureBox4.Location = new System.Drawing.Point(373, 168);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
@@ -170,6 +175,7 @@ namespace SlideGenerator
             this.pictureBox5.Location = new System.Drawing.Point(493, 169);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             // 
