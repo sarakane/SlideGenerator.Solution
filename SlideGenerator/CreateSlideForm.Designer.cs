@@ -32,7 +32,7 @@ namespace SlideGenerator
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.slideTitleTextBox = new System.Windows.Forms.TextBox();
-            this.slideText = new System.Windows.Forms.RichTextBox();
+            this.slideTextRichTextBox = new System.Windows.Forms.RichTextBox();
             this.slideTextLabel = new System.Windows.Forms.Label();
             this.boldTextButton = new System.Windows.Forms.Button();
             this.getImagesButton = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@ namespace SlideGenerator
             this.inputGroupBox.Controls.Add(this.getImagesButton);
             this.inputGroupBox.Controls.Add(this.boldTextButton);
             this.inputGroupBox.Controls.Add(this.slideTextLabel);
-            this.inputGroupBox.Controls.Add(this.slideText);
+            this.inputGroupBox.Controls.Add(this.slideTextRichTextBox);
             this.inputGroupBox.Controls.Add(this.slideTitleTextBox);
             this.inputGroupBox.Controls.Add(this.titleLabel);
             this.inputGroupBox.Location = new System.Drawing.Point(12, 12);
@@ -88,12 +88,12 @@ namespace SlideGenerator
             // 
             // slideText
             // 
-            this.slideText.AutoWordSelection = true;
-            this.slideText.Location = new System.Drawing.Point(41, 47);
-            this.slideText.Name = "slideText";
-            this.slideText.Size = new System.Drawing.Size(300, 75);
-            this.slideText.TabIndex = 2;
-            this.slideText.Text = "";
+            this.slideTextRichTextBox.AutoWordSelection = true;
+            this.slideTextRichTextBox.Location = new System.Drawing.Point(41, 47);
+            this.slideTextRichTextBox.Name = "slideText";
+            this.slideTextRichTextBox.Size = new System.Drawing.Size(300, 75);
+            this.slideTextRichTextBox.TabIndex = 2;
+            this.slideTextRichTextBox.Text = "";
             // 
             // slideTextLabel
             // 
@@ -130,6 +130,7 @@ namespace SlideGenerator
             this.createSlideButton.TabIndex = 1;
             this.createSlideButton.Text = "Create Slide";
             this.createSlideButton.UseVisualStyleBackColor = true;
+            this.createSlideButton.Click += new System.EventHandler(this.CreateSlideButton_Click);
             // 
             // pictureBox1
             // 
@@ -253,7 +254,7 @@ namespace SlideGenerator
         private System.Windows.Forms.Button getImagesButton;
         private System.Windows.Forms.Button boldTextButton;
         private System.Windows.Forms.Label slideTextLabel;
-        private System.Windows.Forms.RichTextBox slideText;
+        private System.Windows.Forms.RichTextBox slideTextRichTextBox;
         private System.Windows.Forms.TextBox slideTitleTextBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button createSlideButton;
