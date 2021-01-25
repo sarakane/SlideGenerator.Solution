@@ -30,12 +30,12 @@ namespace SlideGenerator
         private void InitializeComponent()
         {
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.slideTitleTextBox = new System.Windows.Forms.TextBox();
-            this.slideTextRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.slideTextLabel = new System.Windows.Forms.Label();
-            this.boldTextButton = new System.Windows.Forms.Button();
             this.getImagesButton = new System.Windows.Forms.Button();
+            this.boldTextButton = new System.Windows.Forms.Button();
+            this.slideTextLabel = new System.Windows.Forms.Label();
+            this.slideTextRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.slideTitleTextBox = new System.Windows.Forms.TextBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.createSlideButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -70,30 +70,24 @@ namespace SlideGenerator
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "PowerPoint Input";
             // 
-            // titleLabel
+            // getImagesButton
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(7, 20);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(27, 13);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Title";
+            this.getImagesButton.Location = new System.Drawing.Point(348, 98);
+            this.getImagesButton.Name = "getImagesButton";
+            this.getImagesButton.Size = new System.Drawing.Size(115, 23);
+            this.getImagesButton.TabIndex = 5;
+            this.getImagesButton.Text = "Get Images";
+            this.getImagesButton.UseVisualStyleBackColor = true;
             // 
-            // slideTitleTextBox
+            // boldTextButton
             // 
-            this.slideTitleTextBox.Location = new System.Drawing.Point(41, 20);
-            this.slideTitleTextBox.Name = "slideTitleTextBox";
-            this.slideTitleTextBox.Size = new System.Drawing.Size(300, 20);
-            this.slideTitleTextBox.TabIndex = 1;
-            // 
-            // slideText
-            // 
-            this.slideTextRichTextBox.AutoWordSelection = true;
-            this.slideTextRichTextBox.Location = new System.Drawing.Point(41, 47);
-            this.slideTextRichTextBox.Name = "slideText";
-            this.slideTextRichTextBox.Size = new System.Drawing.Size(300, 75);
-            this.slideTextRichTextBox.TabIndex = 2;
-            this.slideTextRichTextBox.Text = "";
+            this.boldTextButton.Location = new System.Drawing.Point(348, 47);
+            this.boldTextButton.Name = "boldTextButton";
+            this.boldTextButton.Size = new System.Drawing.Size(115, 23);
+            this.boldTextButton.TabIndex = 4;
+            this.boldTextButton.Text = "Bold Selected Text";
+            this.boldTextButton.UseVisualStyleBackColor = true;
+            this.boldTextButton.Click += new System.EventHandler(this.BoldTextButton_Click);
             // 
             // slideTextLabel
             // 
@@ -104,23 +98,30 @@ namespace SlideGenerator
             this.slideTextLabel.TabIndex = 3;
             this.slideTextLabel.Text = "Text";
             // 
-            // boldTextButton
+            // slideTextRichTextBox
             // 
-            this.boldTextButton.Location = new System.Drawing.Point(348, 47);
-            this.boldTextButton.Name = "boldTextButton";
-            this.boldTextButton.Size = new System.Drawing.Size(115, 23);
-            this.boldTextButton.TabIndex = 4;
-            this.boldTextButton.Text = "Bold Selected Text";
-            this.boldTextButton.UseVisualStyleBackColor = true;
+            this.slideTextRichTextBox.AutoWordSelection = true;
+            this.slideTextRichTextBox.Location = new System.Drawing.Point(41, 47);
+            this.slideTextRichTextBox.Name = "slideTextRichTextBox";
+            this.slideTextRichTextBox.Size = new System.Drawing.Size(300, 75);
+            this.slideTextRichTextBox.TabIndex = 2;
+            this.slideTextRichTextBox.Text = "";
             // 
-            // getImagesButton
+            // slideTitleTextBox
             // 
-            this.getImagesButton.Location = new System.Drawing.Point(348, 98);
-            this.getImagesButton.Name = "getImagesButton";
-            this.getImagesButton.Size = new System.Drawing.Size(115, 23);
-            this.getImagesButton.TabIndex = 5;
-            this.getImagesButton.Text = "Get Images";
-            this.getImagesButton.UseVisualStyleBackColor = true;
+            this.slideTitleTextBox.Location = new System.Drawing.Point(41, 20);
+            this.slideTitleTextBox.Name = "slideTitleTextBox";
+            this.slideTitleTextBox.Size = new System.Drawing.Size(300, 20);
+            this.slideTitleTextBox.TabIndex = 1;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Location = new System.Drawing.Point(7, 20);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(27, 13);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "Title";
             // 
             // createSlideButton
             // 

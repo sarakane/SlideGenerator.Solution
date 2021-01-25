@@ -1,5 +1,7 @@
 ﻿using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using Application = Microsoft.Office.Interop.PowerPoint.Application;
 
@@ -7,6 +9,7 @@ namespace SlideGenerator
 {
     public partial class CreateSlideForm : Form
     {
+        private readonly List<string> selectedWords = new List<string>();
         public CreateSlideForm()
         {
             InitializeComponent();
@@ -34,6 +37,20 @@ namespace SlideGenerator
             slideText.Font.Size = 16;
             slide.Shapes[2].Width = 310;
             slide.Shapes[2].Top = 115;
+        }
+
+        private void BoldTextButton_Click(object sender, System.EventArgs e)
+        {
+            if (slideTextRichTextBox.SelectionFont.Bold)
+            {
+                slideTextRichTextBox.SelectionFont = new System.Drawing.Font("Microsoft Sans Serif", (float)8.25, FontStyle.Regular, GraphicsUnit.Point);
+                this.selectedWords.Remove(slideTextRichTextBox.SelectedText.Trim(' ', ',' , '.', '!', '?'));
+            }
+            else
+            {
+                slideTextRichTextBox.SelectionFont = new System.Drawing.Font("Microsoft Sans Serif", 10, FontStyle.Bold, GraphicsUnit.Point);
+                this.selectedWords.Add(slideTextRichTextBox.SelectedText.Trim(' ', ',', '.', '!', '?'));
+            }
         }
     }
 }
